@@ -1,0 +1,13 @@
+<div class="main">
+
+  <div class="new-container">
+    <h1 class="form-heading">タスクの作成</h1>
+    <%= form_tag("/create") do %>
+      <div class="form">
+        <input type="text" name="task" placeholder="task" required>
+        <input type="date" id="today" name="deadline" required>
+        <button type="submit">Submit</button>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="main">
+  <div class="new-container">
+    <h1 class="form-heading">タスクの編集</h1>
+    <%= form_tag("/#{@must.id}/update") do %>
+      <div class="form">
+        <input type="text" name="task" value="
+          <%= @must.task %>
+        " required>
+        <input type="date" name="deadline" value="
+          <%= @must.deadline %>
+        " required>
+        <button type="submit">編集</button>
+      </div>
+    <% end %>
+  </div>
+</div>

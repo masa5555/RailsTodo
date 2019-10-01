@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TodoApp</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<header>
+  <ul class="header-menus">
+    <li>
+      <%= link_to("タスク一覧","/index") %>
+    </li>
+    <li>
+      <%= link_to("新規タスク", "/new") %>
+    </li>
+  </ul>
+</header>
+
+<% if flash[:notice] %>
+  <div class="flash">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<%= yield %>
+</body>
+</html>

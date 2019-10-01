@@ -1,0 +1,18 @@
+<div class="main musts-index">
+  <div class="container">
+    <% @musts.each do |must| %>
+      <div class="musts-index-item">
+        <div class="musts-task">
+          <%=  must.task %>
+        </div>
+        <div class="musts-deadline">
+          <%= must.deadline %>
+        </div>
+        <div class="musts-function">
+          <%= link_to("完了","/#{must.id}/destroy") %>
+          <%= link_to("編集", "/#{must.id}/edit") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
