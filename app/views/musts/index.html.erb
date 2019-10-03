@@ -7,6 +7,14 @@
         </div>
         <div class="musts-deadline">
           <%= must.deadline %>
+          <%= javascript_tag do %>
+            date = <%= raw must.deadline.to_json %>;
+            color(date);
+            taskDay = ("00" + date.getDate()).slice(-2);
+            taskMonth = ("00" + (date.getMonth()+1)).slice(-2);
+            taskYear = date.getFullYear();
+            alert(taskDay);
+          <% end %>
         </div>
         <div class="musts-function">
           <%= link_to("完了","/#{must.id}/destroy") %>

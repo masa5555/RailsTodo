@@ -1,4 +1,6 @@
 # Function
-### CRUD tasks, sorted by date
-### USER 
-### 
+### create, delete, edit a task
+### show tasks sorted by date
+# will
+### signup, signin
+### color tasks 

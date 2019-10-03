@@ -15,3 +15,17 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+function getNowDay(){
+    var dt = new Date();
+    return ("00" + dt.getDate()).slice(-2);
+}
+function getNowMonth() {
+    var dt = new Date();
+    return ("00" + (dt.getMonth()+1)).slice(-2);
+}
+function getNowYear(){
+    var dt = new Date();
+    return dt.getFullYear();
+}
+
