@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post "users/create" => "users#create"
+  get 'users/new' => "users#new"
   get "/:id/destroy" => "musts#destroy"
   post "/:id/update" => "musts#update"
   get "/:id/edit" => "musts#edit"

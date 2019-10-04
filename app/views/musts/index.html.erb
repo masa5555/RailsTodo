@@ -1,25 +1,17 @@
 <div class="main musts-index">
   <div class="container">
     <% @musts.each do |must| %>
-      <div class="musts-index-item">
-        <div class="musts-task">
-          <%=  must.task %>
-        </div>
-        <div class="musts-deadline">
-          <%= must.deadline %>
-          <%= javascript_tag do %>
-            date = <%= raw must.deadline.to_json %>;
-            color(date);
-            taskDay = ("00" + date.getDate()).slice(-2);
-            taskMonth = ("00" + (date.getMonth()+1)).slice(-2);
-            taskYear = date.getFullYear();
-            alert(taskDay);
-          <% end %>
-        </div>
-        <div class="musts-function">
-          <%= link_to("完了","/#{must.id}/destroy") %>
-          <%= link_to("編集", "/#{must.id}/edit") %>
-        </div>
+      <div class="musts-index-item" id="<%= "red" if must.deadline <= Date.today.to_s %>">
+          <div class="musts-task">
+            <%=  must.task %>
+          </div>
+          <div class="musts-deadline">
+            <%= must.deadline %>
+          </div>
+          <div class="musts-function">
+            <%= link_to("完了","/#{must.id}/destroy") %>
+            <%= link_to("編集", "/#{must.id}/edit") %>
+          </div>
       </div>
     <% end %>
   </div>
